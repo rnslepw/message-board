@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message App</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include('nav') %>
+    <div class="cards">
+      <% messages.forEach(message => { %> <%- include('message', {message:
+      message}) %> <% }) %>
+    </div>
+  </body>
+</html>

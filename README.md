@@ -1,1 +1,1 @@
-# message-board
+# Message app for The Odin Project
