@@ -1,22 +1,19 @@
 const { Router } = require("express");
-
 const indexRouter = Router();
 
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+const {
+  getMessages,
+  createNewMessage,
+  getMessageById,
+} = require("../controllers/messageController.ts");
 
-indexRouter.get("/", (req, res) => res.render("index", { messages: messages }));
+// Index routes
+indexRouter.get("/", getMessages);
+indexRouter.get("/message/:id", getMessageById);
+// New routes
 indexRouter.get("/new", (req, res) => res.render("new"));
+indexRouter.post("/new", createNewMessage);
+// Error routes
 indexRouter.get("*", (req, res) => res.render("404"));
 
 module.exports = indexRouter;

@@ -1,7 +1,17 @@
-<div class="card">
-  <h2><%= message.text %></h2>
-  <div class="card-info">
-    <h3><%= message.user %></h3>
-    <h3><%= message.added.toDateString() %></h3>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include('nav') %>
+    <div class="card message">
+      <h2>Text: <%= message.text %></h2>
+      <h3>User: <%= message.user %></h3>
+      <h3>Added: <%= message.added.toDateString() %></h3>
+    </div>
+  </body>
+</html>

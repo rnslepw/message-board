@@ -22,7 +22,7 @@ a {
 
 .cards {
   padding: 3rem;
-  display: flex;
+  display: grid;
   gap: 1rem;
 }
 
@@ -32,6 +32,24 @@ a {
   flex-direction: column;
   border: 1px solid lightgray;
   flex: 1;
+  gap: 1.5rem;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message {
+  align-items: center;
+}
+
+.link-btn {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  align-self: end;
+  border: 1px solid black;
 }
 
 .form {
@@ -64,4 +82,22 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
