@@ -11,7 +11,7 @@ const getMessageById = async (req, res) => {
 };
 
 const createNewMessage = async (req, res) => {
-  messages.push({ ...req.body, added: new Date(), id: messages.length });
+  messages.push({ ...req.body, added: new Date(), id: messages.length + 1 });
   res.redirect("/");
 };
 
